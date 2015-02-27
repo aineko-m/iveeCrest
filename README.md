@@ -1,5 +1,5 @@
 # iveeCrest
-a PHP library for EVE Online's CREST API
+a PHP library for EVE Online's CREST API (beta)
 
 Copyright © 2015 by Aineko Macx.
 All rights reserved.
@@ -49,10 +49,10 @@ git clone git://github.com/aineko-m/iveeCrest.git
 
 To pull data from authenticated CREST, we'll need to acquire a refresh token, which is tied to your application and the character that authorized it's data to be used.
 
-iveeCrest comes with a self-contained web-script that does just this. It can be found under www/getrefreshtoken.php
+iveeCrest comes with a self-contained web-script that does just this. It can be found under www/getrefreshtoken.php.
 Simply copy that file to a webserver and point your web browser to it. The script will take you through the steps. You'll be asked to register your application at [https://developers.eveonline.com/applications](https://developers.eveonline.com/applications) if you haven't already, selecting "CREST Access" and the "publicData" scope.
 
-In the script form you'll then need to enter application ID, secret and redirect URL (filled automatically). When you submit the form you'll be redirected to the CREST authentication page where you'll need to authorize your app to access your characters data (publicData scope). With that done your browser will be redirected back to the script and it'll be able to pull the refresh token and display it. Take note, we'll need it.
+In the script form you'll then need to enter application ID, secret and redirect URL (filled automatically). When you submit the form you'll be redirected to the CREST authentication page where you'll need to authorize your app to access your characters data. With that done your browser will be redirected back to the script and it'll be able to pull the refresh token and display it. Take note, we'll need it.
 
 
 ### Setup iveeCrest
@@ -104,6 +104,8 @@ These examples showcase some of the implemented endpoints in the EndpointHandler
 
 The Client class implements the infrastructure for getting data from CREST. This includes methods for authentication handling, simple requests to single endpoints, automatic gathering of multipage responses and parallel GET requests. The latter is a bit more complex to implement as callback functions need to be used to asynchronously process responses, but provides great flexibility and performance. EndpointHandler has a few examples of how to do it.
 
+To help with the understanding of the structuring of the library, a [class diagram](https://github.com/aineko-m/iveeCrest/raw/master/doc/iveeCrest_class_diagram.pdf) is provided.
+
 
 ## Extending iveeCrest
 If you extend the library with features that are generally useful and compatible with the goals and structuring of the project, Github pull requests are welcome. In any case, if you modify iveeCrest source code, you'll need to comply with the LGPL and release your modifications under the same license.
@@ -121,9 +123,9 @@ One of the possible solutions for these issues (independent of this library) is 
 
 
 ## Future plans
-Both CREST and this library are unfinished, so significant changes should be expected with time. More endpoint handling methods will come. At some point CREST will introduce changes that will certainly make some reworking of the library necessary. More authorization scopes, for instance. iveeCrest will also be integrated into [iveeCore](https://github.com/aineko-m/iveeCore), but I intend to maintain the "solo" library in parallel.
+Both CREST and this library are unfinished, so significant changes should be expected with time. More endpoint handling methods will come. At some point CREST will introduce changes that will certainly make some reworking of the library necessary. More authorization scopes, for instance. iveeCrest will also be integrated into [iveeCore](https://github.com/aineko-m/iveeCore), but I intend to maintain this "solo" library in parallel.
 
-If you find bugs, have any suggestions or other feedback or are "just" a user, please post in this thread.
+If you find bugs, have any suggestions or other feedback or are "just" a user, please post in [this thread](https://forums.eveonline.com/default.aspx?g=posts&t=409103).
 
 
 ## Acknowledgements
