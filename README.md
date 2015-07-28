@@ -13,6 +13,7 @@ See the file LICENSE included with the distribution.
 ## Purpose and target audience
 The goal of this project is to provide its users with a simple but powerful library to access EVE's CREST API. By hiding the complexities and some of the quirks of CREST, iveeCrest helps developers to quickly prototype scripts or develop full blown (web) applications. iveeCrest will likely be most useful for developers with at least basic PHP knowledge.
 
+**As of july 2015 iveeCrest has fully been merged into [iveeCore](https://github.com/aineko-m/iveeCore/). All future development will take place in that project.**
 
 ## Features
 - Object oriented design with high power-to-weight ratio
